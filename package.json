@@ -1,16 +1,16 @@
 {
+  "homepage": "https://moojica.github.io/tomahawk-tipout-calculator",
   "name": "tomahawk-tipout",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://moojica.github.io/tomahawk-tipout-calculator",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
