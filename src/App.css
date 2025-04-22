@@ -1,7 +1,7 @@
 :root {
   --white: hsl(0, 0%, 90%);
   --grey: hsl(0, 0%, 20%);
-  --dark-grey: hsl(0, 0%, 30%);
+  --dark-grey: hsl(0, 0%, 60%);
   --off-black: hsl(0, 0%, 8%);
   --green: hsl(75, 94%, 57%);
   --border-radius: 0.625rem;
