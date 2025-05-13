@@ -1,35 +1,50 @@
 import { useState } from 'react';
-import { format } from 'date-fns';
+import { format, getDay } from 'date-fns';
 
 import './App.css';
 
 function App() {
-  const [totalTips, setTotalTips] = useState(0);
-  const [cocktailSales, setCocktailSales] = useState(0);
-  const [liquorSales, setLiquorSales] = useState(0);
-  const [numServers, setNumServers] = useState(4);
+  const [totalTips, setTotalTips] = useState('');
+  const [cocktailSales, setCocktailSales] = useState('');
+  const [liquorSales, setLiquorSales] = useState('');
+  const [numServers, setNumServers] = useState('');
   const [serverTip, setServerTip] = useState<number | null>(null);
 
   const calculateTip = () => {
-    const houseCut = totalTips * 0.7;
-    const bartenderTip = cocktailSales * 0.05 + liquorSales * 0.05;
+    if (numServers === 0) {
+      alert('Number of servers cannot be zero');
+      return;
+    }
+
+    const total = parseFloat(totalTips) || 0;
+    const cocktails = parseFloat(cocktailSales) || 0;
+    const liquor = parseFloat(liquorSales) || 0;
+    const servers = parseInt(numServers) || 1;
+
+    const houseCut = total * 0.7;
+    const bartenderTip = cocktails * 0.05 + liquor * 0.05;
     const totalForServers = houseCut - bartenderTip;
-    const perServer = totalForServers / numServers;
+    const perServer = totalForServers / servers;
+
     setServerTip(perServer);
   };
 
   const reset = () => {
-    setTotalTips(0);
-    setCocktailSales(0);
-    setLiquorSales(0);
-    setNumServers(4);
+    setTotalTips('');
+    setCocktailSales('');
+    setLiquorSales('');
+    setNumServers('');
     setServerTip(null);
   };
 
   return (
     <main>
       <div className='container'>
-        <h2>{format(new Date(), 'MMMM dd yyyy')}</h2>
+        <h2>
+          {format(new Date(), 'EEEE')}
+          <br />
+          {format(new Date(), 'MMMM dd yyyy')}
+        </h2>
         <h1>Tip Split Calculator</h1>
 
         <div>
