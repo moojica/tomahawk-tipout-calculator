@@ -11,15 +11,15 @@ function App() {
   const [serverTip, setServerTip] = useState<number | null>(null);
 
   const calculateTip = () => {
-    if (numServers === 0) {
-      alert('Number of servers cannot be zero');
-      return;
-    }
-
     const total = parseFloat(totalTips) || 0;
     const cocktails = parseFloat(cocktailSales) || 0;
     const liquor = parseFloat(liquorSales) || 0;
     const servers = parseInt(numServers) || 1;
+
+    if (servers === 0) {
+      alert('Number of servers cannot be zero');
+      return;
+    }
 
     const houseCut = total * 0.7;
     const bartenderTip = cocktails * 0.05 + liquor * 0.05;
@@ -54,7 +54,7 @@ function App() {
             // name='totalTips'
             type='number'
             value={totalTips}
-            onChange={(e) => setTotalTips(parseFloat(e.target.value))}
+            onChange={(e) => setTotalTips(e.target.value)}
             min={0}
           />
         </div>
@@ -65,7 +65,7 @@ function App() {
             id='cocktailSales'
             type='number'
             value={cocktailSales}
-            onChange={(e) => setCocktailSales(parseFloat(e.target.value))}
+            onChange={(e) => setCocktailSales(e.target.value)}
             min={0}
           />
         </div>
@@ -76,7 +76,7 @@ function App() {
             id='liquorSales'
             type='number'
             value={liquorSales}
-            onChange={(e) => setLiquorSales(parseFloat(e.target.value))}
+            onChange={(e) => setLiquorSales(e.target.value)}
             min={0}
           />
         </div>
@@ -87,7 +87,7 @@ function App() {
             id='numServers'
             type='number'
             value={numServers}
-            onChange={(e) => setNumServers(parseInt(e.target.value))}
+            onChange={(e) => setNumServers(e.target.value)}
             min={1}
           />
         </div>
