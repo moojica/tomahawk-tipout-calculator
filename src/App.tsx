@@ -106,7 +106,10 @@ function App() {
             Each Server Gets: ${serverTip.toFixed(2)}
             <br />
             Bartender Gets: $
-            {(cocktailSales * 0.05 + liquorSales * 0.05).toFixed(2)}
+            {(
+              (parseFloat(cocktailSales) || 0) * 0.05 +
+              (parseFloat(liquorSales) || 0) * 0.05
+            ).toFixed(2)}
           </h2>
         )}
       </div>
