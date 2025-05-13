@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { format, getDay } from 'date-fns';
+import { format } from 'date-fns';
 
 import './App.css';
 
