@@ -51,8 +51,9 @@ function App() {
           <label htmlFor='totalTips'>Total Tips: </label>
           <input
             id='totalTips'
-            // name='totalTips'
-            type='number'
+            type='text'
+            inputMode='numeric'
+            pattern='\d*'
             value={totalTips}
             onChange={(e) => setTotalTips(e.target.value)}
             min={0}
@@ -63,7 +64,9 @@ function App() {
           <label htmlFor='cocktailSales'>Cocktail Sales: </label>
           <input
             id='cocktailSales'
-            type='number'
+            type='text'
+            inputMode='numeric'
+            pattern='\d*'
             value={cocktailSales}
             onChange={(e) => setCocktailSales(e.target.value)}
             min={0}
@@ -74,7 +77,9 @@ function App() {
           <label htmlFor='liquorSales'>Liquor Sales: </label>
           <input
             id='liquorSales'
-            type='number'
+            type='text'
+            inputMode='numeric'
+            pattern='\d*'
             value={liquorSales}
             onChange={(e) => setLiquorSales(e.target.value)}
             min={0}
@@ -85,7 +90,9 @@ function App() {
           <label htmlFor='numServers'>Number of Servers: </label>
           <input
             id='numServers'
-            type='number'
+            type='text'
+            inputMode='numeric'
+            pattern='\d*'
             value={numServers}
             onChange={(e) => setNumServers(e.target.value)}
             min={1}
