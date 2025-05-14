@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/tomahawk-tipout-calculator/sw.js', { scope: '/tomahawk-tipout-calculator/' })})}
