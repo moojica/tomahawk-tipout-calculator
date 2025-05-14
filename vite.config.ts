@@ -14,8 +14,8 @@ export default defineConfig({
         name: 'Tip Split Calculator',
         short_name: 'TipCalc',
         description: 'Quickly split tips among servers and bartenders.',
-        theme_color: '#ffffff',
-        background_color: '#ffffff',
+        theme_color: '#999999',
+        background_color: '#999999',
         display: 'standalone',
         start_url: '/tomahawk-tipout-calculator/',
         icons: [
