@@ -52,8 +52,8 @@ function App() {
           <input
             id='totalTips'
             type='text'
-            inputMode='numeric'
-            pattern='\d*'
+            inputMode='decimal'
+            pattern='^\d*\.?\d*$'
             value={totalTips}
             onChange={(e) => setTotalTips(e.target.value)}
             min={0}
@@ -65,8 +65,8 @@ function App() {
           <input
             id='cocktailSales'
             type='text'
-            inputMode='numeric'
-            pattern='\d*'
+            inputMode='decimal'
+            pattern='^\d*\.?\d*$'
             value={cocktailSales}
             onChange={(e) => setCocktailSales(e.target.value)}
             min={0}
@@ -78,8 +78,8 @@ function App() {
           <input
             id='liquorSales'
             type='text'
-            inputMode='numeric'
-            pattern='\d*'
+            inputMode='decimal'
+            pattern='^\d*\.?\d*$'
             value={liquorSales}
             onChange={(e) => setLiquorSales(e.target.value)}
             min={0}
