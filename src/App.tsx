@@ -40,7 +40,12 @@ function App() {
   return (
     <main>
       <div className='container'>
-        <img src='/T-logo.png' alt='Tomahawk Logo' className='logo' />
+        <img
+          src={`${import.meta.env.BASE_URL}T-logo.png`}
+          alt='Tomahawk Logo'
+          className='logo'
+        />
+
         <h2>
           {format(new Date(), 'EEEE')}
           <br />
