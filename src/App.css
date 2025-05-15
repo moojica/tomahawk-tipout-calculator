@@ -89,3 +89,8 @@ main {
 .calculate {
   margin-right: 1rem;
 }
+
+.logo {
+  max-height: 3rem;
+  margin-bottom: 1rem;
+}

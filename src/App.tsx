@@ -40,6 +40,7 @@ function App() {
   return (
     <main>
       <div className='container'>
+        <img src='public\T-logo.png' alt='Tomahawk Logo' className='logo' />
         <h2>
           {format(new Date(), 'EEEE')}
           <br />
